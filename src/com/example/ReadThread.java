@@ -34,8 +34,8 @@ public class ReadThread implements Runnable{
             ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(numberOfThreadsInPool);
             for (String number : numbers) {
                 try {
-                    CalculateThread calculateThread = new CalculateThread(Integer.parseInt(number), this, writeThread);
-                    threadPoolExecutor.execute(calculateThread);
+                    Task task = new Task(Integer.parseInt(number), this, writeThread);
+                    threadPoolExecutor.execute(task);
                 } catch (NumberFormatException numberFormatException) {
                     numberFormatException.printStackTrace();
                 }

@@ -2,12 +2,12 @@ package com.example;
 
 import java.math.BigInteger;
 
-public class CalculateThread implements Runnable{
+public class Task implements Runnable{
     private int number;
     private ReadThread readThread;
     private WriteThread writeThread;
 
-    public CalculateThread(int number, ReadThread readThread, WriteThread writeThread) {
+    public Task(int number, ReadThread readThread, WriteThread writeThread) {
         this.number = number;
         this.readThread = readThread;
         this.writeThread = writeThread;
